@@ -75,7 +75,7 @@ cd third_party/eigen3/unsupported/Eigen/CXX11/src/Tensor
 wget https://bitbucket.org/eigen/eigen/raw/9ba936354ee8b73fb1966dcb2d3506387bb357f1/unsupported/Eigen/CXX11/src/Tensor/TensorContractionThreadPool.h
 cd ~/local/src/tensorflow/
 # replace BUILD file to include the file we just added
-wget https://github.com/zuoanqh/bootstrapping/blob/master/BUILD_fixed
+wget https://raw.githubusercontent.com/zuoanqh/bootstrapping/master/BUILD_fixed
 mv BUILD_fixed third_party/eigen3/BUILD
 
 # build
