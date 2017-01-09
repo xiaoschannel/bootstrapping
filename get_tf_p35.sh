@@ -1,9 +1,9 @@
 # setting path
 export PATH=$HOME/local/bin:/usr/local/bin:/usr/local/cuda-8.0:/usr/local/cuda-7.5/bin:/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/local/lib:$HOME/local/lib64:/usr/local/lib:/usr/local/cuda-8.0:/usr/local/cuda-7.5/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-export CUDA_HOME=/usr/local/cuda-8.0:/usr/local/cuda-7.5:/usr/local/cuda:
-export CUDA_ROOT=/usr/local/cuda-8.0:/usr/local/cuda-7.5/bin:/usr/local/cuda/bin:
-export CUDA_INC_DIR=/usr/local/cuda-8.0:/usr/local/cuda-7.5/bin:/usr/local/cuda/bin:
+export CUDA_HOME=/usr/local/cuda-8.0:/usr/local/cuda-7.5:/usr/local/cuda
+export CUDA_ROOT=/usr/local/cuda-8.0:/usr/local/cuda-7.5/bin:/usr/local/cuda/bin
+export CUDA_INC_DIR=/usr/local/cuda-8.0:/usr/local/cuda-7.5/bin:/usr/local/cuda/bin
 # move to source directory
 mkdir $HOME/local
 mkdir $HOME/local/src
