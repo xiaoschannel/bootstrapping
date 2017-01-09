@@ -36,11 +36,12 @@ $HOME/local/bin/python3 -m pip install protobuf
 $HOME/local/bin/pip-review --auto
 
 # installing Bazel
-wget https://github.com/bazelbuild/bazel/releases/download/0.4.2/bazel-0.4.2-installer-linux-x86_64.sh
-chmod 755 bazel-0.4.2-installer-linux-x86_64.sh
-sudo ./bazel-0.4.2-installer-linux-x86_64.sh --user --prefix=$HOME/local
+wget https://github.com/bazelbuild/bazel/releases/download/0.4.3/bazel-0.4.3-installer-linux-x86_64.sh
+chmod 755 bazel-0.4.3-installer-linux-x86_64.sh
+sudo ./bazel-0.4.3-installer-linux-x86_64.sh --user --prefix=$HOME/local
 bazel
-source $HOME/local/lib/bazel/bin/bazel-complete.bash
+source $HOME/.bazel/bin/bazel-complete.bash
+# source $HOME/local/lib/bazel/bin/bazel-complete.bash
 # installing tensorflow
 git clone --recurse-submodules https://github.com/tensorflow/tensorflow
 cd tensorflow
@@ -81,10 +82,10 @@ mv BUILD_fixed third_party/eigen3/BUILD
 
 # build
 bazel build -c opt --config=cuda --verbose_failures --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
-rm /tmp/tensorflow_pkg/*.whl
+rm ~/tensorflow_pkg/*.whl
 # remove old ones(if any)
-bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
-pip install /tmp/tensorflow_pkg/*.whl
+bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/tensorflow_pkg
+pip install ~/tensorflow_pkg/*.whl
 cd ~
 
-echo "please remember to add the environment variables in this script into ~/.profile and add the bazel line"
+echo "please remember to add the environment variables in this script into ~/.profile and add the bazel line according to prompts"
