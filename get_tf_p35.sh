@@ -39,6 +39,7 @@ $HOME/local/bin/pip-review --auto
 wget https://github.com/bazelbuild/bazel/releases/download/0.4.2/bazel-0.4.2-installer-linux-x86_64.sh
 chmod 755 bazel-0.4.2-installer-linux-x86_64.sh
 sudo ./bazel-0.4.2-installer-linux-x86_64.sh --user --prefix=$HOME/local
+bazel
 source $HOME/local/lib/bazel/bin/bazel-complete.bash
 # installing tensorflow
 git clone --recurse-submodules https://github.com/tensorflow/tensorflow
@@ -86,4 +87,4 @@ bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 pip install /tmp/tensorflow_pkg/*.whl
 cd ~
 
-echo "please remember to add the environment variables in this script into ~/.profile"
+echo "please remember to add the environment variables in this script into ~/.profile and add the bazel line"
