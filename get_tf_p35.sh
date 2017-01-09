@@ -71,21 +71,24 @@ cd tensorflow
 #Please note that each additional compute capability significantly increases your build time and binary size.
 #[Default is: "3.5,5.2"]: 
 
+#============================================for CPU Optimized version
 # now add the missing file from Eigen
-mkdir third_party/eigen3/unsupported/Eigen/CXX11/src/Tensor
-cd third_party/eigen3/unsupported/Eigen/CXX11/src/Tensor
-wget https://bitbucket.org/eigen/eigen/raw/9ba936354ee8b73fb1966dcb2d3506387bb357f1/unsupported/Eigen/CXX11/src/Tensor/TensorContractionThreadPool.h
-cd ~/local/src/tensorflow/
+#mkdir third_party/eigen3/unsupported/Eigen/CXX11/src/Tensor
+#cd third_party/eigen3/unsupported/Eigen/CXX11/src/Tensor
+#wget https://bitbucket.org/eigen/eigen/raw/9ba936354ee8b73fb1966dcb2d3506387bb357f1/unsupported/Eigen/CXX11/src/Tensor/TensorContractionThreadPool.h
+#cd ~/local/src/tensorflow/
 # replace BUILD file to include the file we just added
-wget https://raw.githubusercontent.com/zuoanqh/bootstrapping/master/BUILD_fixed
-mv BUILD_fixed third_party/eigen3/BUILD
-
+#wget https://raw.githubusercontent.com/zuoanqh/bootstrapping/master/BUILD_fixed
+#mv BUILD_fixed third_party/eigen3/BUILD
 # build
-bazel build -c opt --config=cuda --verbose_failures --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
+#bazel build -c opt --config=cuda --verbose_failures --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
+#=============================================for CPU Optimized version end
+
+bazel build -c opt --config=cuda --verbose_failures //tensorflow/tools/pip_package:build_pip_package
 rm ~/tensorflow_pkg/*.whl
 # remove old ones(if any)
 bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/tensorflow_pkg
 pip install ~/tensorflow_pkg/*.whl
 cd ~
 
-echo "please remember to add the environment variables in this script into ~/.profile and add the bazel line according to prompts"
+echo "please remember to add the environment variables in this script into ~/.profile"
