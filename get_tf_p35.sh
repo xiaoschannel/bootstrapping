@@ -76,8 +76,9 @@ wget https://bitbucket.org/eigen/eigen/raw/9ba936354ee8b73fb1966dcb2d3506387bb35
 cd ~/local/src/tensorflow/
 # replace BUILD file to include the file we just added
 wget https://github.com/zuoanqh/bootstrapping/blob/master/BUILD_fixed
-mv BUILD_fixed 
+mv BUILD_fixed third_party/eigen3/BUILD
 
+# build
 bazel build -c opt --config=cuda --verbose_failures --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
 rm /tmp/tensorflow_pkg/*.whl
 # remove old ones(if any)
