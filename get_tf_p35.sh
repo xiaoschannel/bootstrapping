@@ -8,12 +8,12 @@ export CUDA_INC_DIR=/usr/local/cuda-8.0:/usr/local/cuda-7.5/bin:/usr/local/cuda/
 mkdir $HOME/local
 mkdir $HOME/local/src
 cd $HOME/local/src
-# building python 3.5.2
+# building python 3.5.4
 rm ./Python-3.5*
-wget https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tar.xz
-tar Jxvf Python-3.5.2.tar.xz
-rm ./Python-3.5.2.tar.xz
-cd Python-3.5.2
+wget https://www.python.org/ftp/python/3.5.4/Python-3.5.4.tar.xz
+tar Jxvf Python-3.5.4.tar.xz
+rm ./Python-3.5.4.tar.xz
+cd Python-3.5.4
 make clean
 ./configure --prefix=$HOME/local/ --enable-shared LDFLAGS=-Wl,-rpath,$HOME/local/lib
 make -j
