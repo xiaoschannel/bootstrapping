@@ -1,8 +1,6 @@
 export PATH=$HOME/local/bin:/usr/local/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/local/lib:$HOME/local/lib64:$LD_LIBRARY_PATH
 
-mkdir $HOME/local
-mkdir $HOME/local/src
 cd $HOME/local/src
 # building python 3.5.4
 rm ./Python-3.5*
