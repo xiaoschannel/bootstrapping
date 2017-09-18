@@ -12,6 +12,8 @@ cd ~/opencv
 
 # must fix this
 wget https://raw.githubusercontent.com/opencv/opencv_3rdparty/81a676001ca8075ada498583e4166079e5744668/ippicv/ippicv_linux_20151201.tgz
+mkdir 3rdparty/ippicv/downloads
+mkdir 3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e
 mv ippicv_linux_20151201.tgz 3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e/ippicv_linux_20151201.tgz
 # must fix this too >.<
 wget https://raw.githubusercontent.com/zuoanqh/bootstrapping/master/graphcuts_disabled.cpp
