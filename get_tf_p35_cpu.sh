@@ -3,6 +3,7 @@ cd $HOME/local/src
 
 git clone --recurse-submodules https://github.com/tensorflow/tensorflow
 cd tensorflow
+git checkout r1.3
 ./configure
 #Please specify the location of python. [Default is /usr/bin/python]: $HOME/local/bin/python3
 #Found possible Python library paths:
@@ -34,11 +35,11 @@ cd tensorflow
 #If you would like to use a local MKL instead of downloading, please set the environment variable "TF_MKL_ROOT" every time before build.
 #Configuration finished
 
-bazel build -c opt --config=mkl --verbose_failures //tensorflow/tools/pip_package:build_pip_package
+bazel build -c opt --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-mfpmath=both --copt=-msse4.2 --config=cuda -k //tensorflow/tools/pip_package:build_pip_package
 rm ~/local/tem/tensorflow_pkg/*.whl
 # remove old ones(if any)
 bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/local/tem/tensorflow_pkg
 pip3 install ~/local/tem/tensorflow_pkg/*.whl
 cd ~
 
-echo "please remember to add the environment variables in this script into ~/.profile"
+echo "please remember to add the environment variables in this script into ~/.bashrc"
