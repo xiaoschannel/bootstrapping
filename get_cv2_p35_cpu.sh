@@ -15,12 +15,8 @@ mkdir build
 cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=~/local/ \
-    -D WITH_CUDA=ON \
     -D ENABLE_FAST_MATH=1 \
-    -D CUDA_FAST_MATH=1 \
-    -D WITH_CUBLAS=1 \
     -D OPENCV_EXTRA_MODULES_PATH=~/local/src/opencv_contrib/modules \
-    -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-7.5 \
     -D PYTHON_DEFAULT_EXECUTABLE=$HOME/local/bin/python3.5 \
     -D PYTHON_INCLUDE_DIRS=$HOME/local/include/python3.5m \
     -D PYTHON_EXECUTABLE=$HOME/local/bin/python3.5 \

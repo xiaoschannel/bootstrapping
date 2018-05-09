@@ -1,6 +1,3 @@
-export PATH=$HOME/local/bin:/usr/local/bin:$PATH
-export LD_LIBRARY_PATH=$HOME/local/lib:$HOME/local/lib64:$LD_LIBRARY_PATH
-
 cd $HOME/local/src
 # building python 3.5.4
 rm ./Python-3.5*
@@ -10,7 +7,7 @@ rm ./Python-3.5.4.tar.xz
 cd Python-3.5.4
 make clean
 ./configure --prefix=$HOME/local/ --enable-shared LDFLAGS=-Wl,-rpath,$HOME/local/lib
-make -j
+make -j4
 make install
 # installing python packages
 cd $HOME/local/src
